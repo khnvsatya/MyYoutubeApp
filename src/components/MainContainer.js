@@ -1,11 +1,11 @@
 import React from "react";
 import ButtonList from "./ButtonList";
 import VideoContent from "./VideoContent";
+import { useSelector } from "react-redux";
 
 const MainContainer = () => {
   return (
-    <div className="col-span-11  object-center">
-      <ButtonList />
+    <div className="mt-[130px]">
       <VideoContent />
     </div>
   );
