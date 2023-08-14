@@ -16,7 +16,7 @@ const VideoContent = () => {
   const getVideos = async () => {
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
-    // console.log(json);
+
     setVideos(json.items);
   };
   return (
@@ -25,7 +25,7 @@ const VideoContent = () => {
         !isMenuOpen ? "w-[95%] mx-20 my-1" : ""
       }`}
     >
-      {videos.map((video) => (
+      {videos?.map((video) => (
         <div
           key={video.id}
           className={`p-2  w-[343px] shadow-lg cursor-pointer  ${

@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import ResultsPage from "./components/ResultsPage";
+import { useState } from "react";
 
 function App() {
   const appRouter = createBrowserRouter([

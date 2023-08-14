@@ -42,10 +42,10 @@ const Head = () => {
   }, [searchQuery]);
 
   const getSuggestions = async () => {
-    console.log(searchQuery);
+    // console.log(searchQuery);
     const data = await fetch(YOUTUBE_SEARCH_URL + searchQuery);
     const json = await data.json();
-    console.log(json[1]);
+    // console.log(json[1]);
     setSearchSuggestion(json[1]);
     dispatch(
       cacheResults({
