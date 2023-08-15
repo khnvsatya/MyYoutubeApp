@@ -5,15 +5,14 @@ const useChannelInfo = (id) => {
   const [ChannelData, setChannelData] = useState([]);
 
   useEffect(() => {
+    const getChannelData = async () => {
+      const data = await fetch(CHANNEL_INFO(id));
+      const json = await data.json();
+      // console.log(json, "from usechannelInfo");
+      setChannelData(json?.items);
+    };
     getChannelData();
-  }, []);
-
-  const getChannelData = async () => {
-    const data = await fetch(CHANNEL_INFO(id));
-    const json = await data.json();
-    console.log(json, "from usechannelInfo");
-    setChannelData(json?.items);
-  };
+  }, [id]);
 
   return ChannelData;
 };

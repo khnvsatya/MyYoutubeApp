@@ -20,7 +20,7 @@ const Comment = ({ datas, replyCount }) => {
       />
       <div className="p-3">
         <p className=" text-sm font-semibold">@{authorDisplayName}</p>
-        <p className="w-[800px] whitespace-break-spaces text-sm">
+        <p className="w-[750px] whitespace-break-spaces text-sm">
           {textDisplay}
         </p>
         <div className="flex mb-3 ">

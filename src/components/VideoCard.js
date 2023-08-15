@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import handlePublishingTime from "../utils/handlePublishingTime";
-import { CHANNEL_INFO } from "../utils/constants";
+
 import { useDispatch } from "react-redux";
 import { updateChannelId } from "../utils/appSlice";
 import useChannelInfo from "../utils/useChannelInfo";

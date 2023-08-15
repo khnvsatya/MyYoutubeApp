@@ -22,6 +22,11 @@ const appSlice = createSlice({
   },
 });
 
-export const { toggleMenu, closeMenu, disibleMenu, updateChannelId } =
-  appSlice.actions;
+export const {
+  toggleMenu,
+  closeMenu,
+  disibleMenu,
+  updateChannelId,
+  updateSubscriberCount,
+} = appSlice.actions;
 export default appSlice.reducer;

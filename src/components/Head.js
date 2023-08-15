@@ -115,7 +115,6 @@ const Head = () => {
               ref={wrapperRef}
               className="w-[36rem] ml-40 h-auto text-left rounded-lg bg-white m-.5 fixed"
               onClick={(e) => {
-                console.log(e.target.innerText);
                 setSearchQuery(e.target.innerText.slice(3));
                 setShowSuggestions(false);
               }}

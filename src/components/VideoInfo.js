@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { CHANNEL_INFO } from "../utils/constants";
+import React, { useState } from "react";
+
 import handlePublishingTime from "../utils/handlePublishingTime";
 import useChannelInfo from "../utils/useChannelInfo";
 import { useSelector } from "react-redux";
 
 const VideoInfo = ({ videoData }) => {
-  const selectedChannelId = useSelector((store) => store.app.selectedChannelId);
+  let selectedChannelId = useSelector((store) => store.app.selectedChannelId);
 
   const [showDescription, setShowDescription] = useState(false);
+
+  if (localStorage.channelId && selectedChannelId === "") {
+    selectedChannelId = localStorage.getItem("channelId");
+  } else {
+    localStorage.setItem("channelId", selectedChannelId);
+  }
 
   const channelData = useChannelInfo(selectedChannelId);
 
@@ -39,7 +45,12 @@ const VideoInfo = ({ videoData }) => {
               />
               <div className="pt-1 pl-2 flex flex-col gap-[1px]">
                 <p className="font-bold">{channelTitle}</p>
-                <span>xxx subscribers</span>
+                <span>
+                  {channelData && channelData.length > 0
+                    ? channelData[0]?.statistics?.subscriberCount
+                    : "xxxx"}{" "}
+                  subscribers
+                </span>
               </div>
             </div>
             <div className="p-5 bg-gray-100 rounded-xl">
