@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import VideoInfo from "./VideoInfo";
 import { VIDEO_INFO_API } from "../utils/constants";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [videoData, setVideoData] = useState([]);
@@ -24,22 +25,23 @@ const WatchPage = () => {
 
   if (videoData === undefined) return <div>loading...</div>;
   return (
-    <div
-      className={`flex flex-col mt-[130px] ${isMenuOpen ? "px-4" : "pl-20"}`}
-    >
-      <div className="w-800">
-        <iframe
-          width="800"
-          height="450"
-          src={"https://www.youtube.com/embed/" + videoId}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+    <div className="flex mt-[130px] w-full">
+      <div className={`flex flex-col  ${isMenuOpen ? "px-4" : "pl-20"}`}>
+        <div className="w-800">
+          <iframe
+            width="800"
+            height="450"
+            src={"https://www.youtube.com/embed/" + videoId}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <VideoInfo videoData={videoData} />
+        <CommentsContainer videoId={videoId} />
       </div>
-      <VideoInfo videoData={videoData} />
-      <CommentsContainer videoId={videoId} />
+      <LiveChat />
     </div>
   );
 };
