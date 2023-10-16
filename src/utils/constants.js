@@ -5,7 +5,7 @@ export const YOUTUBE_VIDEO_API =
   MY_GOOGLE_KEY;
 
 export const YOUTUBE_SEARCH_URL =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const SEARCH_RESULT_API =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=" +
